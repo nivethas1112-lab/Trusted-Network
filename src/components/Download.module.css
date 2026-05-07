@@ -1,0 +1,89 @@
+.download {
+  background: var(--white);
+  padding: 8rem 0;
+  overflow: hidden;
+  color: var(--primary);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.textSide {
+  flex: 1;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 3rem;
+}
+
+.badges {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.badgeBtn img {
+  height: 50px;
+  transition: var(--transition);
+}
+
+.badgeBtn:hover img {
+  transform: scale(1.05);
+}
+
+.imageSide {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.phoneMockup {
+  width: 300px;
+  height: 600px;
+  background: #000;
+  border: 10px solid #1a1a1a;
+  border-radius: 3.5rem;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+}
+
+.phoneInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 2.8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+}
+
+.appScreen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2.8rem;
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .badges {
+    justify-content: center;
+  }
+}

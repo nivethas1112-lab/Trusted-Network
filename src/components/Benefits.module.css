@@ -1,0 +1,41 @@
+.benefits {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.benefits h2 {
+  background: none;
+  -webkit-text-fill-color: var(--primary);
+  color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  background: #f1f5f9;
+}
+
+.cardTitle {
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.cardDesc {
+  color: #475569;
+  font-size: 1rem;
+}

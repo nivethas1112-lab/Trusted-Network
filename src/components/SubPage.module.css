@@ -1,0 +1,38 @@
+.subPageWrapper {
+  padding-top: 80px; /* Navbar height */
+}
+
+.hero {
+  background: var(--bg-gradient);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.content {
+  background: var(--secondary);
+  color: var(--text-muted);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.inner h2 {
+  color: var(--white);
+  margin: 2rem 0 1rem 0;
+}
+
+.inner p {
+  margin-bottom: 1.5rem;
+}
+
+.backHome {
+  margin-top: 4rem;
+  text-align: center;
+}
