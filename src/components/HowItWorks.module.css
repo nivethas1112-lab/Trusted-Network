@@ -93,18 +93,55 @@
   line-height: 1.6;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
   .timeline {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .subtitle {
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .timeline {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
+
   .stepCard {
-    align-items: center;
-    text-align: center;
+    padding: 1.75rem;
+    gap: 1.25rem;
+  }
+
+  .stepContent h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stepContent p {
+    font-size: 0.9rem;
+  }
+
+  .subtitle {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .stepCard {
+    padding: 1.5rem;
+  }
+
+  .stepContent h3 {
+    font-size: 1.15rem;
   }
 }

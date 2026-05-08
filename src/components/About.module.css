@@ -18,7 +18,8 @@
 }
 
 .kicker {
-  color: var(--primary); /* Midnight blue instead of red */
+  color: var(--primary);
+  /* Midnight blue instead of red */
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -31,10 +32,25 @@
   font-weight: 300;
   line-height: 1.1;
   color: #111;
+  position: relative;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
 }
 
 .title span {
-  color: var(--primary); /* Midnight blue instead of red */
+  color: var(--primary);
+  /* Midnight blue instead of red */
   font-weight: 300;
 }
 
@@ -63,7 +79,8 @@
 }
 
 .checkIcon {
-  color: var(--primary); /* Midnight blue instead of red */
+  color: var(--primary);
+  /* Midnight blue instead of red */
   flex-shrink: 0;
 }
 
@@ -72,7 +89,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--primary); /* Midnight blue instead of red */
+  background-color: var(--primary);
+  /* Midnight blue instead of red */
   color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -86,7 +104,8 @@
 
 .readMoreBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.3); /* Based on midnight blue */
+  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.3);
+  /* Based on midnight blue */
 }
 
 /* Right Side: Image and Video */
@@ -95,11 +114,36 @@
   width: 100%;
 }
 
+.imageContent::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 80px;
+  height: 80px;
+  border-top: 4px solid #0e0841;
+  border-left: 4px solid #320c55;
+  z-index: -1;
+}
+
+.imageContent::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 80px;
+  height: 80px;
+  border-bottom: 4px solid #10053a;
+  border-right: 4px solid #0f0135;
+  z-index: -1;
+}
+
 .imageWrapper {
   position: relative;
-  border-radius: 2rem 2rem 2rem 0; /* Cut out effect at bottom left, approx */
+  border-radius: 2rem 2rem 2rem 0;
+  /* Cut out effect at bottom left, approx */
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .mainImage {
@@ -119,7 +163,8 @@
   align-items: center;
   background-color: #000;
   border-top-right-radius: 1.5rem;
-  border-bottom-left-radius: 2rem; /* Keep corner rounded if main image has border-radius */
+  border-bottom-left-radius: 2rem;
+  /* Keep corner rounded if main image has border-radius */
 }
 
 /* Adding the white cut out look behind the overlay */
@@ -141,14 +186,17 @@
 .playButton {
   width: 80px;
   height: 80px;
-  background-color: var(--primary); /* Midnight blue instead of red */
+  background-color: var(--primary);
+  /* Midnight blue instead of red */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transform: translate(-10px, 10px); /* Adjust to hang off slightly like in screenshot */
-  border: 8px solid #ffffff; /* White border to create the cut out effect */
+  transform: translate(-10px, 10px);
+  /* Adjust to hang off slightly like in screenshot */
+  border: 8px solid #ffffff;
+  /* White border to create the cut out effect */
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
@@ -166,16 +214,64 @@
 }
 
 @media (max-width: 992px) {
+  .about {
+    padding: 4rem 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
-  .imageContent {
-    order: -1; /* Image on top on mobile */
+
+  .textContent {
+    text-align: center;
+    align-items: center;
   }
-  
+
+  .featureList {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .imageContent {
+    order: -1;
+    /* Image on top on mobile */
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+  }
+
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .readMoreBtn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .videoOverlay {
+    padding: 0.5rem;
+  }
+
+  .playButton {
+    width: 60px;
+    height: 60px;
+    border-width: 5px;
+  }
+
+  .videoLabel {
+    font-size: 0.75rem;
+    padding: 0 1rem;
   }
 }

@@ -70,11 +70,54 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: calc(100vh - 80px);
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .title br {
+    display: none;
+  }
+
   .description {
     font-size: 1.1rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
   }
 }

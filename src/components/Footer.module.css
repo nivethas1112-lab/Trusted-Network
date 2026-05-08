@@ -11,17 +11,10 @@
   margin-bottom: 4rem;
 }
 
-.brand .logo {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--white);
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.brand .logo span {
-  color: var(--accent);
+.footerLogo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 1.5rem;
 }
 
 .tagline {
@@ -61,11 +54,39 @@
 @media (max-width: 992px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 0 2rem 0;
+  }
+
+  .grid {
+    gap: 2.5rem;
+  }
+
+  .brand {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .brand .tagline {
+    max-width: 100%;
+  }
+
+  .linkGroup {
+    text-align: center;
   }
 }
 
 @media (max-width: 576px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .brand {
+    grid-column: span 1;
   }
 }

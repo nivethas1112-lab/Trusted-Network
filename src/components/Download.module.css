@@ -1,33 +1,115 @@
 .download {
-  background: var(--white);
-  padding: 8rem 0;
+  background: #f8fafc;
+  padding: 4rem 0;
   overflow: hidden;
   color: var(--primary);
+  position: relative;
+}
+
+.blob1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
 }
 
 .textSide {
   flex: 1;
 }
 
+.trustBadge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
 .title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   color: var(--primary);
   font-weight: 800;
+  position: relative;
+  display: block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #38bdf8, #2563eb);
+  border-radius: 10px;
 }
 
 .description {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #475569;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.featureList {
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.featureList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.featureIcon {
+  width: 24px;
+  height: 24px;
+  background: #22c55e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
 }
 
 .badges {
@@ -36,12 +118,14 @@
 }
 
 .badgeBtn img {
-  height: 50px;
-  transition: var(--transition);
+  height: 48px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .badgeBtn:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-3px);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
 }
 
 .imageSide {
@@ -50,40 +134,143 @@
   justify-content: center;
 }
 
-.phoneMockup {
-  width: 300px;
-  height: 600px;
-  background: #000;
-  border: 10px solid #1a1a1a;
-  border-radius: 3.5rem;
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.phoneContainer {
   position: relative;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  animation: float 6s ease-in-out infinite;
+}
+
+.phoneMockup {
+  width: 280px;
+  height: 560px;
+  background: #050a0f;
+  border: 10px solid #1e293b;
+  border-radius: 3rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 0 15px rgba(255, 255, 255, 0.05),
+    0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .phoneInner {
   width: 100%;
   height: 100%;
-  border-radius: 2.8rem;
+  border-radius: 2.4rem;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f2f5;
+  background: #f1f5f9;
 }
 
 .appScreen {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2.8rem;
+}
+
+.phoneGlass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.phoneShadow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 992px) {
+  .download {
+    padding: 6rem 0;
+  }
+
   .content {
     flex-direction: column;
     text-align: center;
+    gap: 5rem;
   }
+
+  .trustBadge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .description {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  .featureList {
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .featureList li {
+    font-size: 1rem;
+  }
+
   .badges {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .phoneMockup {
+    width: 280px;
+    height: 560px;
+    border-width: 10px;
+  }
+
+  .badgeBtn img {
+    height: 44px;
   }
 }

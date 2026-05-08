@@ -6,7 +6,7 @@ const About = () => {
       <div className="container">
         <div className={styles.grid}>
           {/* Left Side: Text Content */}
-          <div className={styles.textContent}>
+          <div className={`${styles.textContent} reveal slide-left`}>
             <p className={styles.kicker}>INDIA'S TRUSTED BUSINESS SOCIAL NETWORKING PLATFORM</p>
             <h2 className={styles.title}>
               <span>ABOUT</span> TRUSTED NETWORK
@@ -46,7 +46,7 @@ const About = () => {
           </div>
 
           {/* Right Side: Image and Video Player */}
-          <div className={styles.imageContent}>
+          <div className={`${styles.imageContent} reveal slide-right`}>
             <div className={styles.imageWrapper}>
               <img src="/about-handshake.png" alt="Trusted Network Community" className={styles.mainImage} />
               

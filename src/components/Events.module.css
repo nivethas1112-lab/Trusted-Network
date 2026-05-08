@@ -56,7 +56,7 @@
   padding: 0.8rem 1.5rem;
   font-weight: 700;
   font-size: 0.85rem;
-  box-shadow: 10px 0 20px rgba(0,0,0,0.2);
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .eventInfo {
@@ -86,8 +86,47 @@
   margin-bottom: 2rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .events {
+    padding: 4rem 0;
+  }
+
+  .eventInfo {
+    padding: 1.5rem;
+  }
+
+  .eventInfo h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .imageBox {
+    height: 180px;
+  }
+
+  .dateBadge {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+
+  .eventInfo {
+    text-align: center;
+  }
+
+  .eventInfo button {
+    width: 100%;
+    max-width: 280px;
   }
 }

@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #001f3f; /* Midnight Blue */
+  --primary: #001f3f;
+  /* Midnight Blue */
   --primary-light: #003366;
   --primary-dark: #001122;
-  --secondary: #001f3f; /* Midnight Blue base */
-  --accent: #FFFFFF; /* Pure White */
+  --secondary: #001f3f;
+  /* Midnight Blue base */
+  --accent: #FFFFFF;
+  /* Pure White */
   --bg-gradient: linear-gradient(135deg, #001122 0%, #001f3f 100%);
   --text-main: #FFFFFF;
   --text-muted: #cbd5e1;
@@ -33,7 +36,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -56,16 +64,58 @@ ul {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 section {
   padding: 8rem 0;
   position: relative;
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+}
+
 .section-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
-  margin-bottom: 4rem;
-  line-height: 1.2;
+  margin-bottom: 5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #38bdf8, #2563eb);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -1rem;
+  }
 }
 
 .btn {
@@ -123,10 +173,49 @@ section {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scroll Reveal Utility Classes */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-active {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Slide-in from Right */
+.slide-right {
+  transform: translateX(50px);
+}
+
+/* Slide-in from Left */
+.slide-left {
+  transform: translateX(-50px);
+}
+
+/* Slide-in from Bottom */
+.slide-up {
+  transform: translateY(40px);
+}
+
+/* Zoom In */
+.zoom-in {
+  transform: scale(0.9);
 }

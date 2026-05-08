@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <span className={styles.logo}>Trusted<span>Network</span></span>
+            <img src="/logo.png" alt="Trusted Network Logo" className={styles.footerLogo} />
             <p className={styles.tagline}>India’s Trusted Business Social Networking Platform</p>
           </div>
           
