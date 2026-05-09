@@ -18,13 +18,12 @@
 }
 
 .kicker {
-  color: var(--primary);
-  /* Midnight blue instead of red */
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: -0.5rem;
+   color: #191970;
+   font-size: 0.9rem;
+   font-weight: 600;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   margin-bottom: -0.5rem;
 }
 
 .title {
@@ -44,13 +43,12 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: var(--primary);
+  background: var(--brand-orange);
   border-radius: 2px;
 }
 
 .title span {
-  color: var(--primary);
-  /* Midnight blue instead of red */
+  color: var(--brand-orange);
   font-weight: 300;
 }
 
@@ -79,8 +77,7 @@
 }
 
 .checkIcon {
-  color: var(--primary);
-  /* Midnight blue instead of red */
+  color: var(--brand-orange);
   flex-shrink: 0;
 }
 
@@ -89,8 +86,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--primary);
-  /* Midnight blue instead of red */
+  background-color: var(--brand-orange);
   color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -104,8 +100,8 @@
 
 .readMoreBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.3);
-  /* Based on midnight blue */
+  background-color: #ea580c; /* Darker orange */
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
 /* Right Side: Image and Video */
@@ -121,8 +117,8 @@
   left: -15px;
   width: 80px;
   height: 80px;
-  border-top: 4px solid #0e0841;
-  border-left: 4px solid #320c55;
+  border-top: 4px solid var(--primary-dark);
+  border-left: 4px solid var(--primary-light);
   z-index: -1;
 }
 
@@ -133,8 +129,8 @@
   right: -15px;
   width: 80px;
   height: 80px;
-  border-bottom: 4px solid #10053a;
-  border-right: 4px solid #0f0135;
+  border-bottom: 4px solid var(--primary-dark);
+  border-right: 4px solid var(--primary-light);
   z-index: -1;
 }
 
@@ -186,8 +182,7 @@
 .playButton {
   width: 80px;
   height: 80px;
-  background-color: var(--primary);
-  /* Midnight blue instead of red */
+  background-color: var(--brand-orange);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -203,6 +198,7 @@
 
 .playButton:hover {
   transform: translate(-10px, 10px) scale(1.05);
+  background-color: #ea580c;
 }
 
 .videoLabel {

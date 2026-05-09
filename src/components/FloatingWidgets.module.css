@@ -1,0 +1,202 @@
+.container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  z-index: 9999;
+  pointer-events: none; /* Let clicks pass through the container */
+}
+
+.container > * {
+  pointer-events: auto; /* Enable clicks on the actual widgets */
+}
+
+/* Scroll to Top Button */
+.scrollTop {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #37517e;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(55, 81, 126, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 0.5rem; /* Align slightly inward to match chat widget center */
+}
+
+.scrollTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scrollTop:hover {
+  background-color: #2b4066;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(55, 81, 126, 0.4);
+}
+
+.scrollTop svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Chat Widget Container */
+.chatWidget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: #ff6800;
+}
+
+.chatContainer {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Orange Button */
+.chatButton {
+  width: 70px;
+  height: 70px;
+  background-color: #ff6800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(255, 104, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.chatButton:hover {
+  transform: scale(1.05);
+}
+
+.chatIcon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Notification Badge */
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #dc2626;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 2px solid white;
+  z-index: 3;
+}
+
+/* Waving Hand */
+@keyframes wave {
+  0% { transform: rotate(-20deg); }
+  50% { transform: rotate(-40deg); }
+  100% { transform: rotate(-20deg); }
+}
+
+.wavingHand {
+  position: absolute;
+  left: 12px;
+  bottom: 25px;
+  font-size: 1.5rem;
+  transform: rotate(-30deg);
+  animation: wave 2s infinite ease-in-out;
+  z-index: 1;
+  text-shadow: 2px 2px 0px rgba(255,255,255,0.8);
+}
+
+/* Curved Text */
+.curvedTextContainer {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.curvedTextSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.curvedText {
+  font-family: 'Comic Sans MS', 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  fill: #0ea5e9; /* Teal/Blue color from image */
+  stroke: white;
+  stroke-width: 1.5px;
+  paint-order: stroke fill; /* Draws stroke outside the fill */
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .chatButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .scrollTop {
+    width: 42px;
+    height: 42px;
+  }
+}

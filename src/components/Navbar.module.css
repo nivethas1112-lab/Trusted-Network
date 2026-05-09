@@ -1,63 +1,91 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 1.25rem 0;
-  background: linear-gradient(to right, #001122, #001f3f);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 0;
   transition: var(--transition);
+  background: transparent;
 }
 
 .scrolled {
-  padding: 0.8rem 0;
-  background: #001122;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding: 0.75rem 0;
 }
 
 .navContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  background: var(--white);
+  padding: 0.6rem 1rem 0.6rem 2rem;
+  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scrolled .navContent {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logoImg {
-  height: 40px;
+  height: 45px;
   width: auto;
   display: block;
 }
 
 .navLinks {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   align-items: center;
 }
 
 .navLinks a {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 0.5rem 1rem;
+  color: var(--primary);
+  padding: 0.6rem 0.8rem;
   border-radius: 2rem;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .navLinks a:hover {
-  color: #38bdf8;
-  background: rgba(255, 255, 255, 0.08);
-  text-shadow: none;
+  color: var(--brand-orange);
+  background: rgba(249, 115, 22, 0.05);
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--brand-orange);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navLinks a:hover::after {
+  width: 20px;
 }
 
 .mobileToggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  width: 26px;
+  height: 18px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -67,8 +95,8 @@
 
 .bar {
   width: 100%;
-  height: 3px;
-  background-color: var(--white);
+  height: 2.5px;
+  background-color: var(--primary);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -76,19 +104,27 @@
 .navLinksContainer {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-left: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .navContent {
+    padding: 0.6rem 1.5rem;
+  }
+  
   .navLinks a {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .mobileToggle {
     display: flex;
+    z-index: 10000;
+    position: relative;
   }
 
   .navLinksContainer {
@@ -97,7 +133,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #001122;
+    background: var(--primary);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -120,7 +156,7 @@
 
   .navLinks {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 3rem;
     text-align: center;
     width: 100%;
@@ -128,8 +164,14 @@
 
   .navLinks a {
     font-size: 1.5rem;
+    color: var(--white);
     display: block;
     width: 100%;
+  }
+  
+  .navLinks a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--brand-orange);
   }
 
   .cta {
@@ -144,17 +186,24 @@
   }
 
   /* Hamburger Animation */
+  :global(.menuOpen) .bar:nth-child(1),
   .menuOpen .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-    background-color: #38bdf8;
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--brand-orange);
   }
 
+  :global(.menuOpen) .bar:nth-child(2),
   .menuOpen .bar:nth-child(2) {
     opacity: 0;
   }
 
+  :global(.menuOpen) .bar:nth-child(3),
   .menuOpen .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-    background-color: #38bdf8;
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--brand-orange);
+  }
+  
+  .navContent {
+    padding: 0.6rem 1.25rem;
   }
 }

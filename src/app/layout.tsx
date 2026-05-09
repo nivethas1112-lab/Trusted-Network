@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
+import FloatingWidgets from "@/components/FloatingWidgets";
 
 export const metadata: Metadata = {
   title: "Trusted Network | India's Trusted Business Social Networking Platform",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ScrollReveal />
+        <FloatingWidgets />
         {children}
       </body>
     </html>
