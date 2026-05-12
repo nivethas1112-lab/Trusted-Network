@@ -4,7 +4,7 @@
   right: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 1.5rem;
   z-index: 9999;
   pointer-events: none; /* Let clicks pass through the container */
@@ -31,7 +31,6 @@
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-right: 0.5rem; /* Align slightly inward to match chat widget center */
 }
 
 .scrollTop.visible {
@@ -185,18 +184,42 @@
 
 @media (max-width: 768px) {
   .container {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    gap: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    left: auto;
+    transform: none;
+    gap: 0.75rem;
   }
-  
+   
   .chatButton {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 
   .scrollTop {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .chatButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .scrollTop {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scrollTop svg {
+    width: 18px;
+    height: 18px;
   }
 }

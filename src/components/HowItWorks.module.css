@@ -98,12 +98,17 @@
 @media (max-width: 1024px) {
   .timeline {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .subtitle {
-    margin-top: -1.5rem;
-    margin-bottom: 3rem;
+    margin-top: -1rem;
+    margin-bottom: 2.5rem;
     font-size: 1.1rem;
+  }
+
+  .stepCard {
+    padding: 1.75rem;
   }
 }
 
@@ -111,20 +116,20 @@
 @media (max-width: 768px) {
   .timeline {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin-top: 2rem;
   }
 
   .stepCard {
-    padding: 1.5rem;
-    gap: 1rem;
-    flex-direction: row;
+    padding: 1.25rem;
+    gap: 0.875rem;
+    flex-direction: column;
     align-items: flex-start;
   }
 
   .stepNumber {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
   }
 
   .stepContent {
@@ -132,29 +137,37 @@
   }
 
   .stepContent h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
   }
 
   .stepContent p {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
   }
 
   .subtitle {
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    margin-top: -0.75rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .stepCard {
-    padding: 1.25rem;
-    flex-direction: column;
+    padding: 1rem;
   }
 
   .stepContent h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .stepContent p {
+    font-size: 0.85rem;
+  }
+
+  .stepNumber {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
   }
 }

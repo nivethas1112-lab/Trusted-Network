@@ -1,6 +1,7 @@
 .about {
   background-color: #ffffff;
   padding: 6rem 0;
+  overflow-x: hidden;
 }
 
 .grid {
@@ -18,12 +19,12 @@
 }
 
 .kicker {
-   color: #191970;
-   font-size: 0.9rem;
-   font-weight: 600;
-   letter-spacing: 2px;
-   text-transform: uppercase;
-   margin-bottom: -0.5rem;
+  color: #191970;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: -0.5rem;
 }
 
 .title {
@@ -100,7 +101,7 @@
 
 .readMoreBtn:hover {
   transform: translateY(-2px);
-  background-color: #ea580c; /* Darker orange */
+  background-color: #ea580c;
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
@@ -113,31 +114,30 @@
 .imageContent::before {
   content: '';
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 80px;
-  height: 80px;
-  border-top: 4px solid var(--primary-dark);
-  border-left: 4px solid var(--primary-light);
+  top: -10px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  border-top: 3px solid var(--primary-dark);
+  border-left: 3px solid var(--primary-light);
   z-index: -1;
 }
 
 .imageContent::after {
   content: '';
   position: absolute;
-  bottom: -15px;
-  right: -15px;
-  width: 80px;
-  height: 80px;
-  border-bottom: 4px solid var(--primary-dark);
-  border-right: 4px solid var(--primary-light);
+  bottom: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  border-bottom: 3px solid var(--primary-dark);
+  border-right: 3px solid var(--primary-light);
   z-index: -1;
 }
 
 .imageWrapper {
   position: relative;
   border-radius: 2rem 2rem 2rem 0;
-  /* Cut out effect at bottom left, approx */
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -160,7 +160,6 @@
   background-color: #000;
   border-top-right-radius: 1.5rem;
   border-bottom-left-radius: 2rem;
-  /* Keep corner rounded if main image has border-radius */
 }
 
 /* Adding the white cut out look behind the overlay */
@@ -189,9 +188,7 @@
   justify-content: center;
   cursor: pointer;
   transform: translate(-10px, 10px);
-  /* Adjust to hang off slightly like in screenshot */
   border: 8px solid #ffffff;
-  /* White border to create the cut out effect */
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
@@ -232,9 +229,19 @@
 
   .imageContent {
     order: -1;
-    /* Image on top on mobile */
     max-width: 500px;
     margin: 2rem auto;
+    padding: 0 10px; /* Space for the decorative corners */
+  }
+
+  .imageContent::before {
+    left: 0;
+    top: -5px;
+  }
+
+  .imageContent::after {
+    right: 0;
+    bottom: -5px;
   }
 
   .title {
@@ -249,6 +256,32 @@
   .readMoreBtn {
     align-self: center;
   }
+
+  .videoOverlay {
+    padding: 0.75rem;
+    max-width: calc(100% - 65px);
+  }
+
+  .playButton {
+    width: 65px;
+    height: 65px;
+    border-width: 6px;
+    transform: translate(-8px, 8px);
+    flex-shrink: 0;
+  }
+
+  .playButton:hover {
+    transform: translate(-8px, 8px) scale(1.05);
+  }
+
+  .videoLabel {
+    font-size: 0.7rem;
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -258,16 +291,27 @@
 
   .videoOverlay {
     padding: 0.5rem;
+    max-width: calc(100% - 50px);
   }
 
   .playButton {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-width: 5px;
+    transform: translate(-5px, 5px);
+    flex-shrink: 0;
+  }
+
+  .playButton:hover {
+    transform: translate(-5px, 5px) scale(1.05);
   }
 
   .videoLabel {
-    font-size: 0.75rem;
-    padding: 0 1rem;
+    font-size: 0.65rem;
+    padding: 0 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 }

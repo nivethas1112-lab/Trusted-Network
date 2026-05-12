@@ -86,30 +86,22 @@
   margin-bottom: 2rem;
 }
 
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
   .events {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
+  }
+
+  .grid {
+    gap: 1.5rem;
   }
 
   .eventInfo {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .eventInfo h3 {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
   }
 
   .imageBox {
@@ -117,12 +109,24 @@
   }
 
   .dateBadge {
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .imageBox {
+    height: 160px;
   }
 
   .eventInfo {
     text-align: center;
+    padding: 1rem;
   }
 
   .eventInfo button {

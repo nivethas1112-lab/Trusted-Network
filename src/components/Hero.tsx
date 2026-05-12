@@ -6,9 +6,9 @@ const Hero = () => {
       <div className={styles.overlay}></div>
       <div className="container">
         <div className={`${styles.content} animate-fade-in`}>
-<h1 className={styles.title}>
-  India’s Trusted Business Social Networking Platform
-</h1>
+        <h1 className={styles.title}>
+          India’s <span>Trusted Business</span> Social Networking Platform
+        </h1>
           <p className={styles.description}>
             Connect with verified business owners, build meaningful relationships, 
             exchange recommendations, and grow your professional network through 

@@ -12,7 +12,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -67,10 +67,28 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDesc {
+    font-size: 0.95rem;
   }
 }

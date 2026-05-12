@@ -61,14 +61,20 @@
 }
 
 @media (max-width: 992px) {
+  .stats {
+    padding: 4rem 0;
+    background-attachment: scroll;
+  }
+
   .grid {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem 2rem;
+    gap: 2rem 1rem;
   }
 
   .statItem {
-    flex: 0 0 calc(50% - 1rem);
+    flex: 0 0 calc(50% - 0.5rem);
+    min-width: 120px;
   }
 
   .statItem:nth-child(even)::after {
@@ -79,11 +85,16 @@
   .statItem:nth-child(3)::after {
     right: -1rem;
   }
+
+  .value {
+    font-size: 2.25rem;
+  }
 }
+
 
 @media (max-width: 768px) {
   .stats {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background-attachment: scroll;
   }
 
@@ -92,21 +103,26 @@
   }
 
   .value {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
-  .label {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-  }
-}
+   .label {
+     font-size: 0.7rem;
+     letter-spacing: 0.08em;
+   }
+ }
 
 @media (max-width: 480px) {
   .statItem {
     flex: 0 0 100%;
+    min-width: 0;
   }
   
   .grid {
-    gap: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .value {
+    font-size: 1.75rem;
   }
 }

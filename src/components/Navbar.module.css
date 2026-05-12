@@ -19,7 +19,7 @@
   align-items: center;
   width: 100%;
   background: var(--white);
-  padding: 0.6rem 1rem 0.6rem 2rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -156,19 +156,20 @@
 
   .navLinks {
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     width: 100%;
   }
 
   .navLinks a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--white);
     display: block;
     width: 100%;
+    padding: 0.75rem 1rem;
   }
-  
+   
   .navLinks a:hover {
     background: rgba(255, 255, 255, 0.1);
     color: var(--brand-orange);
@@ -183,6 +184,7 @@
 
   .cta a {
     width: 100%;
+    padding: 0.75rem 1.5rem;
   }
 
   /* Hamburger Animation */
@@ -202,8 +204,29 @@
     transform: translateY(-8px) rotate(-45deg);
     background-color: var(--brand-orange);
   }
-  
+   
   .navContent {
     padding: 0.6rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileToggle {
+    width: 24px;
+    height: 18px;
+  }
+
+  .bar {
+    height: 2px;
+  }
+
+  .navLinks a {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .cta a {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 }
